@@ -3,4 +3,6 @@
     <string name="bienvenido">BIENVENIDO A MI APP</string>
     <string name="pulseMe">Pulsame</string>
     <string name="button_pressed">Botón presionado %d veces %s</string>
+    <string name="birth_date">Cumpleaños</string>
+    <string name="birth_place">Lugar de nacimiento</string>
 </resources>
