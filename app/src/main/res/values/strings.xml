@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">HolaAplicacion</string>
+    <string name="app_translate" translatable="false">No se traduce en español</string>
+    <string name="app_name">HelloApp</string>
+    <string name="bienvenido">WELCOME TO MY APP</string>
+    <string name="pulseMe">Pulse Me</string>
+    <string name="button_pressed">Button pressed %d times %s</string>
 </resources>
