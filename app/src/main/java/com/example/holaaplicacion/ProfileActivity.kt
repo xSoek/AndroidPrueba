@@ -14,9 +14,11 @@ class ProfileActivity : AppCompatActivity() {
         val city = intent.extras?.getString("city")
         val date = intent.extras?.getString("date")
         val image = intent.extras?.getInt("image")
+        val desc = intent.extras?.getString("description")
         nametxt.text = name
         citytxt.text = city
         birthDatetxt.text = date
+        descriptionText.text = desc
         if (image != null) {
             profileImage.setImageResource(image)
         }

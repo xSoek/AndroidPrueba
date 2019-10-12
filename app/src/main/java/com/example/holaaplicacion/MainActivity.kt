@@ -47,7 +47,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("date", "08/07/1999")
             intent.putExtra("city", "Madrid")
             intent.putExtra("image", R.drawable.img1)
-            intent.putExtra("description", )
+            intent.putExtra("description", "Joven programador, su interes por las tecnologías apareció cuando comenzó " +
+                    "a jugar videojuegos a los 5 años, después con el tiempo fue interesandose en cómo funcionaba, cómo se movían los " +
+                    "personajes, cómo se cambiaba entre las animaciones de los personajes, etc.. Lo que hizo que entrara en el mundo de " +
+                    "la programación, primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de " +
+                    "Desarrollo de Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos")
             startActivity(intent)
 
             //Imagen a PASAR )
