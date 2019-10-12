@@ -1,6 +1,7 @@
 package com.example.holaaplicacion
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Color.*
 import androidx.appcompat.app.AppCompatActivity
@@ -12,12 +13,15 @@ import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var myText : TextView
+    private lateinit var myText: TextView
+    private lateinit var buttonProf: Button
+
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        myText =  findViewById(R.id.mainText)
+        myText = findViewById(R.id.mainText)
+        buttonProf = findViewById(R.id.buttonProf)
         var random: Int
         var number = 0
 
@@ -26,15 +30,28 @@ class MainActivity : AppCompatActivity() {
 
         val myBtn: Button = findViewById(R.id.mainButton)
         val imageView = findViewById<ImageView>(R.id.mainImage)
-       // val imgId = R.drawable.img1
+        val imgId = R.drawable.img1
 
-        //var img = imgId
+        var img = imgId
 
-       // imageView.setImageResource(img)
+        imageView.setImageResource(img)
         Handler().postDelayed(Runnable {
             myText.text = "Pulsa el boton y veras qué pasa"
             myText.setTextColor(Color.RED)
         }, 2000)
+
+
+        buttonProf.setOnClickListener() {
+            val intent = Intent(this, ProfileActivity::class.java)
+            intent.putExtra("name", "Jorge de Paz")
+            intent.putExtra("date", "08/07/1999")
+            intent.putExtra("city", "Madrid")
+            intent.putExtra("image", R.drawable.img1)
+            intent.putExtra("description", )
+            startActivity(intent)
+
+            //Imagen a PASAR )
+        }
 
         myBtn.setOnClickListener() {
 

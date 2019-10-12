@@ -33,4 +33,10 @@
         android:layout_height="100dp"
         android:layout_marginTop="30dp"
         tools:ignore="ContentDescription" />
+
+    <Button
+        android:id="@+id/buttonProf"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go to Profile" />
 </LinearLayout>
