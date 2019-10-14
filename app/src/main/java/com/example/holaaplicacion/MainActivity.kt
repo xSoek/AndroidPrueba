@@ -54,7 +54,7 @@ class MainActivity : AppCompatActivity() {
                     "Desarrollo de Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos")
             startActivity(intent)
 
-            //Imagen a PASAR )
+            //Imagen a PASAR
         }
 
         myBtn.setOnClickListener() {
