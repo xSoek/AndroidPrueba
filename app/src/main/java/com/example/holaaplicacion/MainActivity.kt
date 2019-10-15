@@ -35,11 +35,12 @@ class MainActivity : AppCompatActivity() {
         var img = imgId
 
         imageView.setImageResource(img)
+
+        /* Eliminado por aviso del profesor (Puede petar la app)
         Handler().postDelayed(Runnable {
             myText.text = "Pulsa el boton y veras qué pasa"
             myText.setTextColor(Color.RED)
-        }, 2000)
-
+        }, 2000)*/
 
         buttonProf.setOnClickListener() {
             val intent = Intent(this, ProfileActivity::class.java)
@@ -49,11 +50,11 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("hobby", "Videojuegos, Nadar")
             intent.putExtra("color", "Verde")
             intent.putExtra("image", R.drawable.profileimg)
-            intent.putExtra("description", "Joven programador, su interes por las tecnologías apareció cuando comenzó " +
-                    "a jugar videojuegos a los 5 años, después con el tiempo fue interesandose en cómo funcionaba, cómo se movían los " +
-                    "personajes, cómo se cambiaba entre las animaciones de los personajes, etc.. Lo que hizo que entrara en el mundo de " +
-                    "la programación, primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de " +
-                    "Desarrollo de Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos")
+            intent.putExtra("description", "Joven programador, su interes por las tecnologías apareció cuando comenzó a " +
+                    "jugar videojuegos a los 5 años, después con el tiempo fue interesandose en cómo funcionaba, cómo se movían los " +
+                    " personajes, cómo se cambiaba entre las animaciones de los personajes, etc.. Lo que hizo que entrara en el mundo " +
+                    "de la programación, primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de Desarrollo de" +
+                    " Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos")
             startActivity(intent)
 
             //Imagen a PASAR
@@ -63,12 +64,14 @@ class MainActivity : AppCompatActivity() {
 
             random = (0..4).random()
             number++
-            val time: String = "time"
-            val message = getString(R.string.button_pressed, number, time)
-            if (number == 1)
+            var message = ""
+            if (number == 1) {
+                message = getString(R.string.button_pressed, number)
                 myText.text = message
-            else
+            }else{
+                message = getString(R.string.button_pressedM1, number)
                 myText.text = message
+            }
             myText.setTextColor(colors[random])
 
             Toast.makeText(MainActivity@ this, "Button pressed!", Toast.LENGTH_SHORT).show()

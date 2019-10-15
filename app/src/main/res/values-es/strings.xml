@@ -2,8 +2,12 @@
     <string name="app_name">HolaAplicacion</string>
     <string name="bienvenido">BIENVENIDO A MI APP</string>
     <string name="pulseMe">Pulsame</string>
-    <string name="button_pressed">Botón presionado %d veces %s</string>
+    <string name="button_pressed">Botón presionado %d vez</string>
+    <string name="button_pressedM1">Botón presionado %d veces</string>
+    <string name="time">vez</string>
+    <string name="times">veces</string>
     <string name="birth_date">Cumpleaños</string>
     <string name="birth_place">Lugar de nacimiento</string>
+    <string name="goToProfile">Ir A Perfil</string>
     <string name="hobby">Aficiones</string>
 </resources>

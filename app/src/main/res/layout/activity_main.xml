@@ -38,5 +38,5 @@
         android:id="@+id/buttonProf"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Go to Profile" />
+        android:text="@string/goToProfile" />
 </LinearLayout>
