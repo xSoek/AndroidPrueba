@@ -11,8 +11,8 @@
 
     <ScrollView
         android:id="@+id/scroll1"
-        android:layout_width="match_parent"
-        android:layout_height="587dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scrollbarSize="6dp">
 
         <LinearLayout
@@ -37,71 +37,133 @@
 
                 <ImageView
                     android:id="@+id/profileImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="200dp"
+                    android:layout_height="300dp"
                     tools:srcCompat="@tools:sample/avatars[11]" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-
-                    android:layout_marginLeft="6dp"
-                    android:layout_marginTop="42dp"
-                    android:orientation="horizontal">
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
                     <LinearLayout
-                        android:layout_width="250dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
 
-                        <TextView
-                            android:id="@+id/textView4"
-                            style="@style/labelStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/birth_date" />
 
-                        <TextView
-                            android:id="@+id/textView3"
-                            style="@style/labelStyle"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/birth_place" />
+                        android:layout_marginTop="42dp"
+                        android:orientation="horizontal">
 
+                        <LinearLayout
+                            android:layout_width="149dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/birthDateLabel"
+                                style="@style/labelStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/birth_date" />
+
+                            <TextView
+                                android:id="@+id/birthPlaceLabel"
+                                style="@style/labelStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="6dp"
+                                android:text="@string/birth_place" />
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="194dp"
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/birthDatetxt"
+                                style="@style/dataStyle"
+                                android:layout_width="109dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:text="prueba" />
+
+                            <TextView
+                                android:id="@+id/citytxt"
+                                style="@style/dataStyle"
+                                android:layout_width="109dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="7dp"
+                                android:text="prueba" />
+
+                        </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="194dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:orientation="horizontal">
 
-
-                        <TextView
-                            android:id="@+id/birthDatetxt"
-                            style="@style/dataStyle"
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="2dp"
-                            tools:text="8/7/1999" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/citytxt"
-                            style="@style/dataStyle"
+                            <TextView
+                                android:id="@+id/hobbyLabel"
+                                style="@style/labelStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="@string/hobby" />
+
+                            <TextView
+                                android:id="@+id/colorLabel"
+                                style="@style/labelStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="26dp"
+                                android:text="@string/color" />
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            tools:text="Madrid" />
+                            android:layout_height="match_parent"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/hobbytext"
+                                style="@style/dataStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="prueba" />
+
+                            <TextView
+                                android:id="@+id/colortext"
+                                style="@style/dataStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="4dp"
+                                android:text="prueba" />
+                        </LinearLayout>
                     </LinearLayout>
+
                 </LinearLayout>
+
             </LinearLayout>
 
             <TextView
                 android:id="@+id/descriptionText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginBottom="16dp"
+                android:layout_margin="8dp"
+                android:layout_marginBottom="10dp"
                 android:text=""
                 android:textSize="25sp" />
         </LinearLayout>

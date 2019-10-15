@@ -5,4 +5,5 @@
     <string name="button_pressed">Botón presionado %d veces %s</string>
     <string name="birth_date">Cumpleaños</string>
     <string name="birth_place">Lugar de nacimiento</string>
+    <string name="hobby">Aficiones</string>
 </resources>

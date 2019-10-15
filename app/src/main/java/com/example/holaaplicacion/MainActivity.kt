@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
             intent.putExtra("name", "Jorge de Paz")
             intent.putExtra("date", "08/07/1999")
             intent.putExtra("city", "Madrid")
-            intent.putExtra("image", R.drawable.img1)
+            intent.putExtra("hobby", "Videojuegos, Nadar")
+            intent.putExtra("color", "Verde")
+            intent.putExtra("image", R.drawable.profileimg)
             intent.putExtra("description", "Joven programador, su interes por las tecnologías apareció cuando comenzó " +
                     "a jugar videojuegos a los 5 años, después con el tiempo fue interesandose en cómo funcionaba, cómo se movían los " +
                     "personajes, cómo se cambiaba entre las animaciones de los personajes, etc.. Lo que hizo que entrara en el mundo de " +
