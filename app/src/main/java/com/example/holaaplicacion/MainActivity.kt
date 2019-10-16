@@ -15,6 +15,7 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
     private lateinit var myText: TextView
     private lateinit var buttonProf: Button
+    private lateinit var buttonMovie: Button
 
     @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -22,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         myText = findViewById(R.id.mainText)
         buttonProf = findViewById(R.id.buttonProf)
+        buttonMovie = findViewById(R.id.buttonMovie)
         var random: Int
         var number = 0
 
@@ -58,6 +60,11 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
 
             //Imagen a PASAR
+        }
+
+        buttonMovie.setOnClickListener(){
+            val intent = Intent(this, MovieDetailActivity::class.java)
+            startActivity(intent)
         }
 
         myBtn.setOnClickListener() {
