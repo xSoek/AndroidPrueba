@@ -1,4 +1,15 @@
 <resources>
-    <string name="app_name">HolaAplicacion</string>
-    <string name="pulsame">PULSAME!</string>
+
+    <string name="app_name">HelloApp</string>
+    <string name="bienvenido">WELCOME TO MY APP</string>
+    <string name="pulseMe">Pulse Me</string>
+    <string name="time">time</string>
+    <string name="times">times</string>
+    <string name="button_pressed">Button pressed %d  time</string>
+    <string name="button_pressedM1">Button pressed %d  times</string>
+    <string name="birth_date">Birth date</string>
+    <string name="birth_place">Birth place</string>
+    <string name="hobby">Hobbies</string>
+    <string name="goToProfile">Go To Profile</string>
+    <string name="color" translatable="false">Color</string>
 </resources>
