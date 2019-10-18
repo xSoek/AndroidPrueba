@@ -1,7 +1,9 @@
 package com.example.holaaplicacion
 
 import android.annotation.SuppressLint
+
 import android.content.Intent
+
 import android.graphics.Color
 import android.graphics.Color.*
 import androidx.appcompat.app.AppCompatActivity
@@ -12,6 +14,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
+import java.util.*
+
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var myText: TextView
     private lateinit var buttonProf: Button
@@ -21,6 +27,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         myText = findViewById(R.id.mainText)
         buttonProf = findViewById(R.id.buttonProf)
         buttonMovie = findViewById(R.id.buttonMovie)
@@ -30,6 +37,8 @@ class MainActivity : AppCompatActivity() {
 
         val colors = arrayOf(GREEN, RED, BLUE, YELLOW, CYAN)
 
+        val myText: TextView = findViewById(R.id.mainText)
+
         val myBtn: Button = findViewById(R.id.mainButton)
         val imageView = findViewById<ImageView>(R.id.mainImage)
         val imgId = R.drawable.img1
@@ -38,11 +47,7 @@ class MainActivity : AppCompatActivity() {
 
         imageView.setImageResource(img)
 
-        /* Eliminado por aviso del profesor (Puede petar la app)
-        Handler().postDelayed(Runnable {
-            myText.text = "Pulsa el boton y veras qué pasa"
-            myText.setTextColor(Color.RED)
-        }, 2000)*/
+
 
         buttonProf.setOnClickListener() {
             val intent = Intent(this, ProfileActivity::class.java)
@@ -71,6 +76,7 @@ class MainActivity : AppCompatActivity() {
 
             random = (0..4).random()
             number++
+
             var message = ""
             if (number == 1) {
                 message = getString(R.string.button_pressed, number)
@@ -79,6 +85,7 @@ class MainActivity : AppCompatActivity() {
                 message = getString(R.string.button_pressedM1, number)
                 myText.text = message
             }
+
             myText.setTextColor(colors[random])
 
             Toast.makeText(MainActivity@ this, "Button pressed!", Toast.LENGTH_SHORT).show()

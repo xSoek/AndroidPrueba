@@ -1,4 +1,5 @@
 <resources>
+
     <string name="app_name">HelloApp</string>
     <string name="bienvenido">WELCOME TO MY APP</string>
     <string name="pulseMe">Pulse Me</string>
