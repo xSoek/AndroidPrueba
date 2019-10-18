@@ -1,29 +1,30 @@
 package com.example.holaaplicacion
 
-import android.annotation.SuppressLint
 import android.content.Intent
-import android.graphics.Color
 import android.graphics.Color.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+
+
+
 
 class MainActivity : AppCompatActivity() {
     private lateinit var myText: TextView
     private lateinit var buttonProf: Button
     private lateinit var buttonMovie: Button
 
-    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         myText = findViewById(R.id.mainText)
         buttonProf = findViewById(R.id.buttonProf)
         buttonMovie = findViewById(R.id.buttonMovie)
+        Log.e("miTag0.1","error0.1")
         var random: Int
         var number = 0
 
@@ -37,12 +38,6 @@ class MainActivity : AppCompatActivity() {
         var img = imgId
 
         imageView.setImageResource(img)
-
-        /* Eliminado por aviso del profesor (Puede petar la app)
-        Handler().postDelayed(Runnable {
-            myText.text = "Pulsa el boton y veras qué pasa"
-            myText.setTextColor(Color.RED)
-        }, 2000)*/
 
         buttonProf.setOnClickListener() {
             val intent = Intent(this, ProfileActivity::class.java)
@@ -83,8 +78,49 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(MainActivity@ this, "Button pressed!", Toast.LENGTH_SHORT).show()
 
+
         }
     }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("savText", myText.getText().toString());
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        myText.setText(savedInstanceState.getString("savText"))
+        //restore it using the key
+
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.e("miTag1.1","onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.e("miTag2.1","onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.e("miTag3.1","onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.e("miTag4.1","onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.e("miTag5.1","error5.1")
+    }
+
+
 
 
 }
