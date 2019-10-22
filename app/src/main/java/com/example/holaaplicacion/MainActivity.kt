@@ -9,14 +9,21 @@ import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
-
-
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.holaaplicacion.model.Movie
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_recycle_view.*
 
 
 class MainActivity : AppCompatActivity() {
     private lateinit var myText: TextView
     private lateinit var buttonProf: Button
     private lateinit var buttonMovie: Button
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,10 +31,13 @@ class MainActivity : AppCompatActivity() {
         myText = findViewById(R.id.mainText)
         buttonProf = findViewById(R.id.buttonProf)
         buttonMovie = findViewById(R.id.buttonMovie)
+        viewManager = LinearLayoutManager(this)
+
+
         Log.e("miTag0.1","error0.1")
         var random: Int
         var number = 0
-
+        var APIKEY = "78fa5a012cc429b291d89251d98e9f0e"
 
         val colors = arrayOf(GREEN, RED, BLUE, YELLOW, CYAN)
 
@@ -58,7 +68,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         buttonMovie.setOnClickListener(){
-            val intent = Intent(this, MovieDetailActivity::class.java)
+            val intent = Intent(this, MovieActivityList::class.java)
             startActivity(intent)
         }
 
@@ -81,6 +91,7 @@ class MainActivity : AppCompatActivity() {
 
         }
     }
+
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)

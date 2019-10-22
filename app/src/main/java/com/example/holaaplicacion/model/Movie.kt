@@ -1,6 +1,5 @@
 package com.example.holaaplicacion.model
 
-import android.media.Image
 
 data class Movie(
 
