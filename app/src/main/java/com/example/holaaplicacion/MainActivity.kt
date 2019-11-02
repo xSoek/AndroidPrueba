@@ -1,5 +1,7 @@
 package com.example.holaaplicacion
 
+
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.graphics.Color.*
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +18,10 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_recycle_view.*
 
 
+import java.util.*
+
+
+
 class MainActivity : AppCompatActivity() {
     private lateinit var myText: TextView
     private lateinit var buttonProf: Button
@@ -28,18 +34,20 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
         myText = findViewById(R.id.mainText)
         buttonProf = findViewById(R.id.buttonProf)
         buttonMovie = findViewById(R.id.buttonMovie)
         viewManager = LinearLayoutManager(this)
 
 
-        Log.e("miTag0.1","error0.1")
         var random: Int
         var number = 0
         var APIKEY = "78fa5a012cc429b291d89251d98e9f0e"
 
         val colors = arrayOf(GREEN, RED, BLUE, YELLOW, CYAN)
+
+        val myText: TextView = findViewById(R.id.mainText)
 
         val myBtn: Button = findViewById(R.id.mainButton)
         val imageView = findViewById<ImageView>(R.id.mainImage)
@@ -63,8 +71,6 @@ class MainActivity : AppCompatActivity() {
                     "de la programación, primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de Desarrollo de" +
                     " Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos")
             startActivity(intent)
-
-            //Imagen a PASAR
         }
 
         buttonMovie.setOnClickListener(){
@@ -76,6 +82,7 @@ class MainActivity : AppCompatActivity() {
 
             random = (0..4).random()
             number++
+
             var message = ""
             if (number == 1) {
                 message = getString(R.string.button_pressed, number)
@@ -84,6 +91,7 @@ class MainActivity : AppCompatActivity() {
                 message = getString(R.string.button_pressedM1, number)
                 myText.text = message
             }
+
             myText.setTextColor(colors[random])
 
             Toast.makeText(MainActivity@ this, "Button pressed!", Toast.LENGTH_SHORT).show()
@@ -105,33 +113,4 @@ class MainActivity : AppCompatActivity() {
         //restore it using the key
 
     }
-
-    override fun onStart() {
-        super.onStart()
-        Log.e("miTag1.1","onStart")
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.e("miTag2.1","onResume")
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.e("miTag3.1","onPause")
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.e("miTag4.1","onStop")
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.e("miTag5.1","error5.1")
-    }
-
-
-
-
 }
