@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+tools:context=".MovieActivityList"
+    android:elevation="20dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/activity_movie_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FDFDFD">
+
+        <ImageView
+            android:id="@+id/labelImg"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="4dp"
+            android:layout_marginTop="16dp"
+            android:fadingEdgeLength="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars[3]" />
+
+        <TextView
+            android:id="@+id/labelTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="32dp"
+            android:textColor="#000000"
+            android:textSize="15sp"
+            app:layout_constraintStart_toEndOf="@+id/labelImg"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Transformers: La era de la extincion" />
+
+        <TextView
+            android:id="@+id/labelOriginalTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:textSize="11sp"
+            app:layout_constraintStart_toStartOf="@+id/labelTitle"
+            app:layout_constraintTop_toBottomOf="@+id/labelTitle"
+            tools:text="Transformers: The age of Extinction" />
+
+        <TextView
+            android:id="@+id/DateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Fecha de Lanzamiento"
+            app:layout_constraintStart_toStartOf="@+id/labelOriginalTitle"
+            app:layout_constraintTop_toBottomOf="@+id/labelOriginalTitle" />
+
+        <TextView
+            android:id="@+id/labelRate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="249dp"
+            app:layout_constraintBottom_toTopOf="@+id/labelTitle"
+            app:layout_constraintStart_toEndOf="@+id/labelImg"
+            app:layout_constraintTop_toTopOf="@+id/labelImg"
+            tools:text="8.9" />
+
+        <TextView
+            android:id="@+id/labelDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            app:layout_constraintStart_toEndOf="@+id/DateText"
+            app:layout_constraintTop_toTopOf="@+id/DateText"
+            tools:text="12/12/1999" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="#74070000"
+        android:textColor="#0E0101" />
+
+</LinearLayout>

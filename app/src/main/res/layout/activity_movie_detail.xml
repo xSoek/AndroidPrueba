@@ -7,7 +7,7 @@
     tools:context=".MovieDetailActivity">
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="141dp"
@@ -56,7 +56,7 @@
         android:layout_marginTop="56dp"
         android:text="Viva Piñata"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/photo" />
 
     <TextView
         android:id="@+id/genreLabel"

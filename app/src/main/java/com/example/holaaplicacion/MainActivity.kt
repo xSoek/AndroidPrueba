@@ -1,18 +1,22 @@
 package com.example.holaaplicacion
 
+
 import android.annotation.SuppressLint
-
 import android.content.Intent
-
-import android.graphics.Color
 import android.graphics.Color.*
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.holaaplicacion.model.Movie
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_recycle_view.*
+
 
 import java.util.*
 
@@ -22,8 +26,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var myText: TextView
     private lateinit var buttonProf: Button
     private lateinit var buttonMovie: Button
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var viewAdapter: RecyclerView.Adapter<*>
+    private lateinit var viewManager: RecyclerView.LayoutManager
 
-    @SuppressLint("SetTextI18n")
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -31,9 +38,12 @@ class MainActivity : AppCompatActivity() {
         myText = findViewById(R.id.mainText)
         buttonProf = findViewById(R.id.buttonProf)
         buttonMovie = findViewById(R.id.buttonMovie)
+        viewManager = LinearLayoutManager(this)
+
+
         var random: Int
         var number = 0
-
+        var APIKEY = "78fa5a012cc429b291d89251d98e9f0e"
 
         val colors = arrayOf(GREEN, RED, BLUE, YELLOW, CYAN)
 
@@ -46,8 +56,6 @@ class MainActivity : AppCompatActivity() {
         var img = imgId
 
         imageView.setImageResource(img)
-
-
 
         buttonProf.setOnClickListener() {
             val intent = Intent(this, ProfileActivity::class.java)
@@ -63,12 +71,10 @@ class MainActivity : AppCompatActivity() {
                     "de la programación, primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de Desarrollo de" +
                     " Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos")
             startActivity(intent)
-
-            //Imagen a PASAR
         }
 
         buttonMovie.setOnClickListener(){
-            val intent = Intent(this, MovieDetailActivity::class.java)
+            val intent = Intent(this, MovieActivityList::class.java)
             startActivity(intent)
         }
 
@@ -90,8 +96,21 @@ class MainActivity : AppCompatActivity() {
 
             Toast.makeText(MainActivity@ this, "Button pressed!", Toast.LENGTH_SHORT).show()
 
+
         }
     }
 
 
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        outState.putString("savText", myText.getText().toString());
+
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        myText.setText(savedInstanceState.getString("savText"))
+        //restore it using the key
+
+    }
 }
