@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_profile"
+    android:id="@+id/fragment_activity_profile"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context=".ProfileActivity">
+    tools:context=".Profile.ProfileActivity">
 
     <ScrollView
         android:id="@+id/scroll1"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbarSize="6dp">
 
@@ -138,14 +139,14 @@
                             android:orientation="vertical">
 
                             <TextView
-                                android:id="@+id/hobbytext"
+                                android:id="@+id/hobbytxt"
                                 style="@style/dataStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="prueba" />
 
                             <TextView
-                                android:id="@+id/colortext"
+                                android:id="@+id/colortxt"
                                 style="@style/dataStyle"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -169,4 +170,4 @@
         </LinearLayout>
     </ScrollView>
 
-</LinearLayout>
+</FrameLayout>

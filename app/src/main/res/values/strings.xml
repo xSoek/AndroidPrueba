@@ -1,14 +1,29 @@
 <resources>
     <string name="app_name">HelloApp</string>
     <string name="bienvenido">WELCOME TO MY APP</string>
-    <string name="pulseMe">Pulse Me</string>
-    <string name="time">time</string>
-    <string name="times">times</string>
     <string name="button_pressed">Button pressed %d  time</string>
     <string name="button_pressedM1">Button pressed %d  times</string>
     <string name="birth_date">Birth date</string>
     <string name="birth_place">Birth place</string>
     <string name="hobby">Hobbies</string>
-    <string name="goToProfile">Go To Profile</string>
+    <string name="release_date">Release Date</string>
+    <string name="casting"> Casting </string>
     <string name="color" translatable="false">Color</string>
+    <string name="director">Director</string>
+    <string name="favorite">Favorite Image</string>
+    <string name="share">Share Image</string>
+    <string name="delete_from_fav">Delete From Favorites Image</string>
+    <string name="backdropPath_desc">Poster Image</string>
+    <string name="genre">Genre/s</string>
+    <string name="Name" translatable="false">Jorge de Paz</string>
+    <string name="birth_date2" translatable="false">08/07/1999</string>
+    <string name="birth_place2" translatable="false">Madrid</string>
+    <string name="color2">Green</string>
+    <string name="hobby2">Videogames, swimming</string>
+    <string name="aboutMe" translatable="false">Joven programador, su interes por las tecnologías
+        apareció cuando comenzó a jugar videojuegos a los 5 años, después con el tiempo fue
+        interesandose en cómo funcionaba, cómo se movían los personajes, cómo se cambiaba entre las
+        animaciones de los personajes, etc.. Lo que hizo que entrara en el mundo de la programación,
+        primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de Desarrollo
+        de Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos</string>
 </resources>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".List_Detail.MovieDetailActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/genreLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="24dp"
+                android:text="@string/genre"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/titleText" />
+
+            <TextView
+                android:id="@+id/yearText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:text="Prueba"
+                android:textSize="20sp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/year"
+                app:layout_constraintStart_toStartOf="@+id/genreText" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="right"
+                app:constraint_referenced_ids="genreLabel,year,directorLabel"
+                tools:layout_editor_absoluteX="123dp" />
+
+            <TextView
+                android:id="@+id/year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/release_date"
+                android:textSize="17sp"
+                app:layout_constraintEnd_toEndOf="@+id/genreLabel"
+                app:layout_constraintHorizontal_bias="0.486"
+                app:layout_constraintStart_toStartOf="@+id/genreLabel"
+                app:layout_constraintTop_toBottomOf="@+id/genreLabel" />
+
+            <TextView
+                android:id="@+id/descText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/actorText"
+                tools:text="Prueba" />
+
+            <TextView
+                android:id="@+id/actorText"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/actorLabel"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/directorText"
+                tools:text="Prueba" />
+
+            <TextView
+                android:id="@+id/titleText"
+                style="@style/ProfileName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="52dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photo"
+                tools:text="Viva Piñata" />
+
+            <TextView
+                android:id="@+id/genreText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="60dp"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                app:layout_constraintBaseline_toBaselineOf="@+id/genreLabel"
+                app:layout_constraintStart_toEndOf="@+id/genreLabel"
+                tools:text="Prueba" />
+
+            <ImageView
+                android:id="@+id/photo"
+                android:layout_width="0dp"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:srcCompat="@tools:sample/avatars[5]"
+                android:contentDescription="@string/backdropPath_desc" />
+
+            <TextView
+                android:id="@+id/directorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/director"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/year"
+                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintStart_toStartOf="@+id/year"
+                app:layout_constraintTop_toBottomOf="@+id/year" />
+
+            <TextView
+                android:id="@+id/actorLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/casting"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/directorLabel"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/directorLabel"
+                app:layout_constraintTop_toBottomOf="@+id/directorLabel" />
+
+            <TextView
+                android:id="@+id/directorText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:layout_constraintBaseline_toBaselineOf="@+id/directorLabel"
+                app:layout_constraintStart_toStartOf="@+id/yearText"
+                tools:text="Prueba" />
+
+            <TextView
+                android:id="@+id/rateText"
+                style="@style/dataStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                tools:text="Prueba"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/photo" />
+
+            <ImageView
+                android:id="@+id/imgFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="56dp"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toStartOf="@+id/imgNoFav"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descText"
+                app:srcCompat="@android:drawable/btn_star_big_on"
+                android:contentDescription="@string/favorite" />
+
+            <ImageView
+                android:id="@+id/imgShare"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="56dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descText"
+                app:srcCompat="@android:drawable/ic_menu_share"
+                android:contentDescription="@string/share"/>
+
+            <ImageView
+                android:id="@+id/imgNoFav"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="100dp"
+                app:layout_constraintEnd_toStartOf="@+id/imgShare"
+                app:layout_constraintTop_toBottomOf="@+id/descText"
+                app:srcCompat="@android:drawable/star_big_off"
+                android:contentDescription="@string/delete_from_fav"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</FrameLayout>
