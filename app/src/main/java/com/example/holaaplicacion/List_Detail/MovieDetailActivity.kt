@@ -16,6 +16,7 @@ class MovieDetailActivity : AppCompatActivity() {
         setMovieDetail()
     }
 
+    //Recibe los datos de la pelicula enviados desde el MovieSearcher
     fun setMovieDetail(){
 
         titleText.text = intent.extras?.getString("title")
@@ -29,6 +30,7 @@ class MovieDetailActivity : AppCompatActivity() {
 
     }
 
+    //Función improvisada para quitar las comas sobrantes
     fun deleteLastComa(field: Int): Int{
         val delete = field - 2
         return delete

@@ -10,21 +10,23 @@ import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface MovieApi {
+
+    // Query -> selecciona todas las peliculas con un string similar al introducido por parametro
     @GET("search/movie?")
     suspend fun searchMovies(@Query("api_key") apiKey: String, @Query("query") movie: String): Response<MovieResponse>
 
+    // Query -> selecciona la pelicula indicada por parametro para mostrar su info
     @GET("movie/{id}?")
     suspend fun getMovieDetail(@Path("id") id: Int, @Query("api_key") api_key: String): Response<Movie>
 
+    // Query -> selecciona la pelicula indicada por parametro para mostrar sus créditos
     @GET("movie/{id}/credits?")
     suspend fun getMovieCast(@Path("id") id: Int, @Query("api_key") api_key: String): Response<Credits>
 
-   /* @GET("/api/location/{id}/")
-    suspend fun getCityDetail(@Path("id") cityId: Int?): Response<WeatherResponse>
-*/
 }
 
 
+//Creación del Retrofit
 object RetrofitFactory {
     const val BASE_URL = "https://api.themoviedb.org/3/"
 

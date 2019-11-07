@@ -18,8 +18,11 @@ class MovieSearchPresenter(val view: MovieSearchView) {
         val movieApi = RetrofitFactory.getMovieApi()
         CoroutineScope(Dispatchers.IO).launch {
 
+            //Nos devuelve la query con toda la información que le hemos solicitado
             val response = movieApi.searchMovies(apiKey, movieName)
             withContext(Dispatchers.Main) {
+
+                //Si no ha ocurrido ningún error inesperado, le pasaremos el response por parametro a la view
                 if (response.isSuccessful) {
                     val movies = response.body()
                     view.showMovies(movies!!.results)
@@ -33,10 +36,13 @@ class MovieSearchPresenter(val view: MovieSearchView) {
         CoroutineScope(Dispatchers.IO).launch {
             val response = movieApi.getMovieDetail(id, apiKey)
             val responseCast = movieApi.getMovieCast(id, apiKey)
-            var movies = response.body()
-            var castDirector = responseCast.body()
+            val movies = response.body()
+            val castDirector = responseCast.body()
+
+            //Si no ha ocurrido ningún error inesperado, le pasaremos el response por parametro a la view,
+            // que se encargara de separar la info de la pelicula, el casting de actores y el director y enviarselo al MovieDetailActivity
             if (response.isSuccessful) {
-                view.openMovieDetail(movies!!, castDirector!!.crew, castDirector!!.cast)
+                view.openMovieDetail(movies!!, castDirector!!.crew, castDirector.cast)
             }
         }
     }

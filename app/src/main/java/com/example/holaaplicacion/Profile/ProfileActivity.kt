@@ -12,8 +12,8 @@ import kotlinx.android.synthetic.main.fragment_activity_profile.*
 class ProfileActivity : Fragment() {
 
     override fun onCreateView( inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        // Inflate the layout for this fragment
 
+        // Inflate the layout for this fragment
        return inflater.inflate(R.layout.fragment_activity_profile, container, false)
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
