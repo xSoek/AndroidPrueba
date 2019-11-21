@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/orderBy"
+        android:title="Ordenar por">
+        <menu>
+            <item
+                android:id="@+id/ordDate"
+                android:title="Fecha de Añadido" />
+            <item
+                android:id="@+id/ordName"
+                android:title="Nombre" />
+        </menu>
+    </item>
+    <item
+        android:id="@+id/deleteAll"
+        android:title="DELETE ALL" />
+</menu>

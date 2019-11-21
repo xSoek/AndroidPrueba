@@ -1,7 +1,9 @@
 package com.example.holaaplicacion.API_Connection
 
 
+import com.example.holaaplicacion.List_Detail.MovieListActivity
 import com.example.holaaplicacion.model.*
+import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
@@ -36,4 +38,10 @@ object RetrofitFactory {
             .addConverterFactory(MoshiConverterFactory.create())
             .build().create(MovieApi::class.java)
     }
+    //val devbytes = retrofit.create(DevbyteService::class.java)
 }
+
+/*interface DevbyteService {
+    @GET("devbytes")
+    fun getPlaylist(): Deferred<NetworkVideoContainer>
+}*/

@@ -6,6 +6,7 @@
         android:icon="@android:drawable/ic_menu_search"
         android:title="Buscar" />
     <item
+        android:id="@+id/fragment_favourite_movie"
         android:icon="@android:drawable/btn_star_big_on"
         android:title="Favoritos" />
     <item

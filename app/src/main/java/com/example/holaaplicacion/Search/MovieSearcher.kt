@@ -59,6 +59,8 @@ class MovieSearcher : Fragment(), MovieSearchPresenter.MovieSearchView {
 
         //Enviamos toda la informacion al MovieDetailActivity
         intent.putExtra("id", movie.id)
+        intent.putExtra("poster_path", movie.poster_path)
+        intent.putExtra("original_title", movie.original_title)
         intent.putExtra("title", movie.title)
         intent.putExtra("release_date", movie.release_date)
         intent.putExtra("vote_average", movie.vote_average)

@@ -30,10 +30,10 @@
                 android:id="@+id/yearText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                tools:text="Prueba"
                 android:textSize="20sp"
                 app:layout_constraintBaseline_toBaselineOf="@+id/year"
-                app:layout_constraintStart_toStartOf="@+id/genreText" />
+                app:layout_constraintStart_toStartOf="@+id/genreText"
+                tools:text="Prueba" />
 
             <androidx.constraintlayout.widget.Barrier
                 android:id="@+id/barrier"
@@ -109,13 +109,13 @@
                 android:id="@+id/photo"
                 android:layout_width="0dp"
                 android:layout_height="250dp"
+                android:contentDescription="@string/backdropPath_desc"
                 android:scaleType="fitXY"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                tools:srcCompat="@tools:sample/avatars[5]"
-                android:contentDescription="@string/backdropPath_desc" />
+                tools:srcCompat="@tools:sample/avatars[5]" />
 
             <TextView
                 android:id="@+id/directorLabel"
@@ -158,22 +158,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
-                tools:text="Prueba"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/photo" />
-
-            <ImageView
-                android:id="@+id/imgFav"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="56dp"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toStartOf="@+id/imgNoFav"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/descText"
-                app:srcCompat="@android:drawable/btn_star_big_on"
-                android:contentDescription="@string/favorite" />
+                app:layout_constraintTop_toBottomOf="@+id/photo"
+                tools:text="Prueba" />
 
             <ImageView
                 android:id="@+id/imgShare"
@@ -181,21 +168,23 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="56dp"
+                android:contentDescription="@string/share"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descText"
-                app:srcCompat="@android:drawable/ic_menu_share"
-                android:contentDescription="@string/share"/>
+                app:srcCompat="@android:drawable/ic_menu_share" />
 
             <ImageView
-                android:id="@+id/imgNoFav"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:id="@+id/imgFav"
+                android:layout_width="43dp"
+                android:layout_height="43dp"
+                android:layout_marginTop="12dp"
                 android:layout_marginEnd="100dp"
+                android:contentDescription="@string/delete_from_fav"
                 app:layout_constraintEnd_toStartOf="@+id/imgShare"
+                app:layout_constraintHorizontal_bias="0.48"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/descText"
-                app:srcCompat="@android:drawable/star_big_off"
-                android:contentDescription="@string/delete_from_fav"/>
+                app:srcCompat="@drawable/star_off" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 

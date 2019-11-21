@@ -15,4 +15,9 @@
         android:name="com.example.holaaplicacion.Search.MovieSearcher"
         android:label="fragment_movie_list"
         tools:layout="@layout/fragment_movie_searcher" />
+    <fragment
+        android:id="@+id/fragment_favourite_movie"
+        android:name="com.example.holaaplicacion.Favourites.FavouriteMoviesList"
+        android:label="fragment_favourite_movies"
+        tools:layout="@layout/fragment_favourite_movies" />
 </navigation>
