@@ -1,19 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
-android:layout_width="match_parent"
-android:layout_height="wrap_content"
-android:orientation="vertical"
-tools:context=".MovieActivityList"
-    android:elevation="20dp">
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragment_movie_list"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".List_Detail.MovieListActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/activity_movie_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#FDFDFD">
+        android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/labelImg"
@@ -21,19 +17,23 @@ tools:context=".MovieActivityList"
             android:layout_height="125dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
             android:fadingEdgeLength="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:srcCompat="@tools:sample/avatars[3]" />
 
         <TextView
             android:id="@+id/labelTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginTop="32dp"
             android:textColor="#000000"
             android:textSize="15sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/labelImg"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="Transformers: La era de la extincion" />
@@ -43,7 +43,8 @@ tools:context=".MovieActivityList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="25dp"
-            android:textSize="11sp"
+            android:textSize="12sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="@+id/labelTitle"
             app:layout_constraintTop_toBottomOf="@+id/labelTitle"
             tools:text="Transformers: The age of Extinction" />
@@ -53,7 +54,7 @@ tools:context=".MovieActivityList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Fecha de Lanzamiento"
+            android:text="@string/release_date"
             app:layout_constraintStart_toStartOf="@+id/labelOriginalTitle"
             app:layout_constraintTop_toBottomOf="@+id/labelOriginalTitle" />
 
@@ -61,10 +62,13 @@ tools:context=".MovieActivityList"
             android:id="@+id/labelRate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="249dp"
+            android:layout_marginStart="232dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toTopOf="@+id/labelTitle"
             app:layout_constraintStart_toEndOf="@+id/labelImg"
-            app:layout_constraintTop_toTopOf="@+id/labelImg"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.666"
             tools:text="8.9" />
 
         <TextView
@@ -72,16 +76,10 @@ tools:context=".MovieActivityList"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="38dp"
+            android:textStyle="italic"
             app:layout_constraintStart_toEndOf="@+id/DateText"
             app:layout_constraintTop_toTopOf="@+id/DateText"
             tools:text="12/12/1999" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="3dp"
-        android:background="#74070000"
-        android:textColor="#0E0101" />
-
-</LinearLayout>
+</FrameLayout>

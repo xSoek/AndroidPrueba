@@ -1,13 +1,19 @@
 <resources>
     <string name="app_name">HolaAplicacion</string>
     <string name="bienvenido">BIENVENIDO A MI APP</string>
-    <string name="pulseMe">Pulsame</string>
     <string name="button_pressed">Botón presionado %d vez</string>
     <string name="button_pressedM1">Botón presionado %d veces</string>
-    <string name="time">vez</string>
-    <string name="times">veces</string>
     <string name="birth_date">Cumpleaños</string>
     <string name="birth_place">Lugar de nacimiento</string>
-    <string name="goToProfile">Ir A Perfil</string>
     <string name="hobby">Aficiones</string>
+    <string name="release_date">Fecha de Producción</string>
+    <string name="casting">Actores</string>
+    <string name="director">Director</string>
+    <string name="favorite">Imagen de Favorito</string>
+    <string name="share">Imagen de compartir</string>
+    <string name="delete_from_fav">Borrar de Favoritos</string>
+    <string name="backdropPath_desc">Imagen de promoción</string>
+    <string name="genre">Género/s</string>
+    <string name="color2">Verde</string>
+    <string name="hobby2">Videojuegos, nadar</string>
 </resources>
