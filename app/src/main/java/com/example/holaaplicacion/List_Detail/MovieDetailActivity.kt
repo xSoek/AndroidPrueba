@@ -16,15 +16,10 @@ import com.example.holaaplicacion.model.Cast
 import com.example.holaaplicacion.model.Crew
 import com.example.holaaplicacion.model.Movie
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.fragment_favourite_movies.*
 import kotlinx.android.synthetic.main.fragment_movie_detail.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import java.text.SimpleDateFormat
-import java.time.LocalDate
-import java.time.format.DateTimeFormatter
-import java.util.*
 
 
 class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteView {
@@ -38,6 +33,7 @@ class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteVie
         setMovieDetail()
         val presenter = FavouritePresenter(this)
 
+        //Comprueba si esta en favoritos, de ser asi cambia el icono de favoritos para que el usuario sepa que ya esta en la lista
         CoroutineScope(Dispatchers.IO).launch {
             baseContext?.let {
                 if( AppDataBase.invoke(it).getMoviesDao().isInFavourites(intent.extras!!.getInt("id"))==1){
@@ -47,9 +43,9 @@ class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteVie
             }
         }
 
+        //Dependiendo de si ya esta o no en favoritos, añadira o eliminara la pelicula de la
+        // cual se esta mostrando el detalle, y cambiara el icono para que el usuario lo sepa
         imgFav.setOnClickListener {
-
-
             val selectedMovie = FavMovies(
                 intent.extras!!.getInt("id"),
                 intent.extras?.getString("title"),

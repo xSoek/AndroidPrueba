@@ -6,6 +6,8 @@ import androidx.room.*
 import com.example.holaaplicacion.model.DatabaseMovie
 import com.example.holaaplicacion.model.Movie
 
+
+//El Dao posee todas las queries de la app
 @Dao
 interface moviesDao {
 

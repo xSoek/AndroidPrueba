@@ -2,10 +2,10 @@ package com.example.holaaplicacion.Database
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import androidx.room.Room
 import com.example.holaaplicacion.Favourites.FavouriteMoviesAdapter
-import com.example.holaaplicacion.List_Detail.MovieDetailActivity
 
+
+//Creacion del LocalRepository
 interface LocalRepository {
      fun getAllMovies(view: View, favMoviesAdapter: FavouriteMoviesAdapter)
      fun insertMovie(favMovies: FavMovies, view: View)

@@ -61,10 +61,15 @@ class FavouriteMoviesList : BaseFragment(), FavouritePresenter.FavouriteView {
     }
 
 
+    //Todas las funciones del menu de Favoritos se encuentran a partir de aqui
+
+    //Opcion de Borrar Todos
     private fun deleteAllMovies(){
        presenter.deleteAllMovies(this.view, favourite_recycler_view)
     }
 
+
+    //Ordenar por Fecha
     private fun orderByDate(){
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
@@ -73,6 +78,7 @@ class FavouriteMoviesList : BaseFragment(), FavouritePresenter.FavouriteView {
         }
     }
 
+    //Escoge una funcion u otra dependiendo de la opcion escogida
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.deleteAll -> deleteAllMovies()
@@ -80,11 +86,14 @@ class FavouriteMoviesList : BaseFragment(), FavouritePresenter.FavouriteView {
         }
         return super.onOptionsItemSelected(item)
     }
+
+    //Crea las opciones del menu
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.favourite_menu, menu)
     }
 
+    //Llama a la Creacion el MovieDetail
     override fun openMovieDetail(movie: Movie, director: MutableList<Crew>, casting: MutableList<Cast>) {
         val intent = Intent(this.context, MovieDetailActivity::class.java)
         val genresSize  = movie.genres.size

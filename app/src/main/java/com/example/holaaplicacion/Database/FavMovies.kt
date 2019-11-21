@@ -10,6 +10,7 @@ import java.time.LocalDate
 import java.util.*
 
 
+//Creacion de la tabla
 @Entity(tableName = "favourite_movies_database")
 data class FavMovies(
 

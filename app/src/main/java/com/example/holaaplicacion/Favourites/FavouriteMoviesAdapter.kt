@@ -19,18 +19,13 @@ class FavouriteMoviesAdapter(val listener: (FavMovies) -> Unit) : RecyclerView.A
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
-        println("HOLAAAAAAAAAAAAAAAAAAAAAAAAAA")
+
         return MovieViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        println("ENTREEEEEEEEEEEEEEEEEEEEEEEEEEEE")
+
         val myMovie = movies.get(position)
-        holder.title.text = movies[position].title
-        holder.date.text = movies[position].release_date
-        holder.orgTitle.text = movies[position].original_title
-        holder.rate.text = movies[position].vote_average.toString()
-        Picasso.get().load("http://image.tmdb.org/t/p/w200/" + movies[position].poster_path).into(holder.img1)
         holder.bind(myMovie, listener)
 
     }

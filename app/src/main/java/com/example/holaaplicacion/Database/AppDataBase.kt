@@ -6,10 +6,7 @@ import androidx.room.Room
 import androidx.room.RoomDatabase
 
 
-/*abstract class AppDataBase: RoomDatabase(){
-    abstract fun moviesDao(): moviesDao
-}*/
-
+//Creacion de la Entity y la Database
 
 @Database(entities = [FavMovies::class], version = 1)
 abstract class AppDataBase : RoomDatabase() {

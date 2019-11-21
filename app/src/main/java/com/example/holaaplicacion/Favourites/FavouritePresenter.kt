@@ -13,17 +13,19 @@ import kotlinx.coroutines.*
 
 class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
 
+
+    //Borra la pelicula que esta añadida en favoritos, mediante corutinas
     override fun deleteOneMovie(selectedMovie: FavMovies, view: View) {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 AppDataBase.invoke(view.context).getMoviesDao().deleteMovie(selectedMovie)
             }
         }
-
-
     }
 
-    override fun deleteAllMovies(view: View?, favourite_recycler_view: RecyclerView){
+
+    //Borra todas las peliculas (Opcion del Menú), mediante corutinas
+    override fun deleteAllMovies(view: View?, favourite_recycler_view: RecyclerView) {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 AppDataBase.invoke(view!!.context).getMoviesDao().deleteAllMovies()
@@ -32,8 +34,8 @@ class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
         }
     }
 
+    //Muestra todas las peliculas estan añadidas en favoritos, mediante corutinas
     override fun getAllMovies(view: View, favMoviesAdapter: FavouriteMoviesAdapter) {
-
         CoroutineScope(Dispatchers.IO).launch {
             val myMovies = AppDataBase.invoke(view.context).getMoviesDao().getMovies()
             withContext(Dispatchers.Main) {
@@ -42,7 +44,7 @@ class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
             }
         }
     }
-
+    //Inserta una pelicula a favoritos, mediante corutinas
     override fun insertMovie(favMovies: FavMovies, view: View) {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
