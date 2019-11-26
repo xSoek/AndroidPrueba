@@ -9,6 +9,7 @@ import androidx.annotation.RequiresApi
 import com.example.holaaplicacion.Database.AppDataBase
 import com.example.holaaplicacion.Database.FavMovies
 import com.example.holaaplicacion.Favourites.BaseFragment
+import com.example.holaaplicacion.Favourites.FavouriteMoviesAdapter
 import com.example.holaaplicacion.Favourites.FavouriteMoviesList
 import com.example.holaaplicacion.Favourites.FavouritePresenter
 import com.example.holaaplicacion.R
@@ -24,15 +25,16 @@ import kotlinx.coroutines.launch
 
 class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteView {
 
+
     private var isAdded: Boolean = false
-    private var favList = FavouriteMoviesList()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_movie_detail)
         setMovieDetail()
         val presenter = FavouritePresenter(this)
-
+        var favMoviesAdapter: FavouriteMoviesAdapter
         //Comprueba si esta en favoritos, de ser asi cambia el icono de favoritos para que el usuario sepa que ya esta en la lista
         CoroutineScope(Dispatchers.IO).launch {
             baseContext?.let {
@@ -53,6 +55,7 @@ class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteVie
                 intent.extras?.getString("release_date"),
                 intent.extras?.getDouble("vote_average"),
                 intent.extras?.getString("poster_path")
+
             )
             println("ME HAN PINCHADO!!!!")
             if (!isAdded) {
@@ -61,9 +64,9 @@ class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteVie
                 isAdded = true
 
             } else if (isAdded) {
-                presenter.deleteOneMovie(selectedMovie, it)
+                favMoviesAdapter = FavouriteMoviesAdapter {  }
+                presenter.deleteOneMovie(selectedMovie, it, favMoviesAdapter)
                 imgFav.setImageResource(R.drawable.star_off)
-
                 isAdded = false
 
             }
@@ -105,3 +108,4 @@ class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteVie
 
 
 }
+
