@@ -27,6 +27,8 @@ import kotlinx.coroutines.withContext
 
 
 class FavouriteMoviesList : BaseFragment(), FavouritePresenter.FavouriteView {
+
+
     lateinit var favMoviesAdapter: FavouriteMoviesAdapter
     val presenter = FavouritePresenter(this)
 
@@ -60,29 +62,31 @@ class FavouriteMoviesList : BaseFragment(), FavouritePresenter.FavouriteView {
         presenter.getAllMovies(view, favMoviesAdapter)
     }
 
-
     //Todas las funciones del menu de Favoritos se encuentran a partir de aqui
 
     //Opcion de Borrar Todos
     private fun deleteAllMovies(){
-       presenter.deleteAllMovies(this.view, favourite_recycler_view)
+        favourite_recycler_view.visibility = View.GONE
+        presenter.deleteAllMovies(this.view, favourite_recycler_view)
     }
-
 
     //Ordenar por Fecha
     private fun orderByDate(){
-        CoroutineScope(Dispatchers.IO).launch {
-            withContext(Dispatchers.Main) {
-                //AppDataBase.invoke(view!!.context).getMoviesDao().getMoviesByDate()
-            }
-        }
+        presenter.getAllMoviesByDate(this.view!!, favMoviesAdapter)
     }
+
+    //Ordenar por Fecha
+    private fun orderByName(){
+        presenter.getAllMoviesByName(this.view!!, favMoviesAdapter)
+    }
+
 
     //Escoge una funcion u otra dependiendo de la opcion escogida
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when(item.itemId) {
             R.id.deleteAll -> deleteAllMovies()
             R.id.ordDate -> orderByDate()
+            R.id.ordName -> orderByName()
         }
         return super.onOptionsItemSelected(item)
     }

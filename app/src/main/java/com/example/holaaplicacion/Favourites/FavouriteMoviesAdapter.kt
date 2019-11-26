@@ -18,6 +18,7 @@ class FavouriteMoviesAdapter(val listener: (FavMovies) -> Unit) : RecyclerView.A
         this.movies = newMovies
         notifyDataSetChanged()
     }
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
 
         return MovieViewHolder.from(parent)
@@ -27,7 +28,6 @@ class FavouriteMoviesAdapter(val listener: (FavMovies) -> Unit) : RecyclerView.A
 
         val myMovie = movies.get(position)
         holder.bind(myMovie, listener)
-
     }
 
     override fun getItemCount(): Int {
@@ -43,6 +43,7 @@ class FavouriteMoviesAdapter(val listener: (FavMovies) -> Unit) : RecyclerView.A
 
 
         fun bind (movie: FavMovies, listener: (FavMovies) -> Unit){
+
             title.text = movie.title
             orgTitle.text = movie.original_title
             date.text = movie.release_date
