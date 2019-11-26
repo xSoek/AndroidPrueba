@@ -13,12 +13,14 @@ import kotlinx.coroutines.*
 
 class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
 
-
     //Borra la pelicula que esta añadida en favoritos, mediante corutinas
-    override fun deleteOneMovie(selectedMovie: FavMovies, view: View) {
+    override fun deleteOneMovie(selectedMovie: FavMovies, view: View, adapter: FavouriteMoviesAdapter) {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 AppDataBase.invoke(view.context).getMoviesDao().deleteMovie(selectedMovie)
+                val notDeleted =  AppDataBase.invoke(view!!.context).getMoviesDao().getMovies()
+                println(notDeleted)
+                adapter.addMovies(notDeleted)
             }
         }
     }
@@ -29,7 +31,6 @@ class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
         CoroutineScope(Dispatchers.IO).launch {
             withContext(Dispatchers.Main) {
                 AppDataBase.invoke(view!!.context).getMoviesDao().deleteAllMovies()
-                favourite_recycler_view.visibility = View.GONE
             }
         }
     }
@@ -44,6 +45,27 @@ class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
             }
         }
     }
+
+    override fun getAllMoviesByDate(view: View, favMoviesAdapter: FavouriteMoviesAdapter) {
+        CoroutineScope(Dispatchers.IO).launch {
+            withContext(Dispatchers.Main) {
+                val myMovies = AppDataBase.invoke(view.context).getMoviesDao().getMoviesByDate()
+                favMoviesAdapter.addMovies(myMovies)
+                println(myMovies)
+            }
+        }
+    }
+
+    override fun getAllMoviesByName(view: View, favMoviesAdapter: FavouriteMoviesAdapter) {
+        CoroutineScope(Dispatchers.IO).launch {
+            withContext(Dispatchers.Main) {
+                val myMovies = AppDataBase.invoke(view.context).getMoviesDao().getMoviesByName()
+                favMoviesAdapter.addMovies(myMovies)
+                println(myMovies)
+            }
+        }
+    }
+
     //Inserta una pelicula a favoritos, mediante corutinas
     override fun insertMovie(favMovies: FavMovies, view: View) {
         CoroutineScope(Dispatchers.IO).launch {
@@ -72,6 +94,7 @@ class FavouritePresenter(private val view: FavouriteView) : LocalRepository {
     }
 
     interface FavouriteView {
+
         fun openMovieDetail(movie: Movie, director: MutableList<Crew>, casting: MutableList<Cast>)
     }
 }
