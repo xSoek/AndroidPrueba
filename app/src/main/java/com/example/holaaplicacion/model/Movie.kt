@@ -1,7 +1,6 @@
 package com.example.holaaplicacion.model
 
 data class Movie(
-
     val popularity: String,
     val vote_count: Int,
     val video: Boolean,
@@ -17,6 +16,13 @@ data class Movie(
     val overview: String,
     val release_date: String
 )
+
+data class DatabaseMovie(
+    val id: Int,
+    val title: String,
+    val release_date: String,
+    val vote_average: Double)
+
 data class Genre(
 
     var id: Int,

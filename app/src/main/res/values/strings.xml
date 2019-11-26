@@ -27,4 +27,7 @@
         animaciones de los personajes, etc.. Lo que hizo que entrara en el mundo de la programación,
         primero haciendo un grado en Ingernieria de Computadores, luego en una ciclo de Desarrollo
         de Aplicaciones Multplataforma (DAM) y luego un Máster en Desarrollo de Videojuegos</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

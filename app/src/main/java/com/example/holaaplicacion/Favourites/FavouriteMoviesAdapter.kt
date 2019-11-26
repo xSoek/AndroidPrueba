@@ -1,30 +1,33 @@
-package com.example.holaaplicacion.Search
+package com.example.holaaplicacion.Favourites
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.holaaplicacion.Database.FavMovies
 import com.example.holaaplicacion.R
-import com.example.holaaplicacion.model.Movie
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_movie_list.view.*
 
 
-class MovieAdapter(val listener: (Movie) -> Unit)
-:RecyclerView.Adapter<MovieAdapter.MovieViewHolder>(){
+class FavouriteMoviesAdapter(val listener: (FavMovies) -> Unit) : RecyclerView.Adapter<FavouriteMoviesAdapter.MovieViewHolder>(){
 
-    private var movies = listOf<Movie>()
+    private var movies = listOf<FavMovies>()
 
-    fun addMovies(newMovies: List<Movie>) {
+    fun addMovies(newMovies: List<FavMovies>) {
         this.movies = newMovies
         notifyDataSetChanged()
     }
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieViewHolder {
+
         return MovieViewHolder.from(parent)
     }
 
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
-        val movie = movies.get(position)
-        holder.bind(movie, listener)
+
+        val myMovie = movies.get(position)
+        holder.bind(myMovie, listener)
+
     }
 
     override fun getItemCount(): Int {
@@ -39,7 +42,7 @@ class MovieAdapter(val listener: (Movie) -> Unit)
         var img1 = itemView.labelImg
 
 
-        fun bind (movie: Movie, listener: (Movie) -> Unit){
+        fun bind (movie: FavMovies, listener: (FavMovies) -> Unit){
             title.text = movie.title
             orgTitle.text = movie.original_title
             date.text = movie.release_date

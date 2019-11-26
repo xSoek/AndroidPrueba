@@ -60,7 +60,7 @@ class MainActivity : AppCompatActivity() {
 
         val navController = findNavController(R.id.fragment)
         val appBarConfiguration =
-            AppBarConfiguration(setOf(R.id.fragment_movie_list, R.id.fragment_movie_list, R.id.fragment_activity_profile))
+            AppBarConfiguration(setOf(R.id.fragment_movie_list, R.id.fragment_favourite_movie, R.id.fragment_activity_profile))
 
         bottomNavigationView.setupWithNavController(navController)
         setupActionBarWithNavController(findNavController(R.id.fragment), appBarConfiguration)
