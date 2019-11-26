@@ -30,7 +30,6 @@ data class Genre(
 )
 
 data class MovieResponse(
-
     var page: Int,
     var total_pages: Int,
     var results: MutableList<Movie>

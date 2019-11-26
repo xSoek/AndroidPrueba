@@ -31,6 +31,9 @@ data class FavMovies(
     val vote_average: Double?,
 
     @ColumnInfo(name = "poster path")
-    val poster_path: String?
+    val poster_path: String?,
+
+    @ColumnInfo(name = "date_Inserted")
+    val date: Long? = System.currentTimeMillis()
 )
 
