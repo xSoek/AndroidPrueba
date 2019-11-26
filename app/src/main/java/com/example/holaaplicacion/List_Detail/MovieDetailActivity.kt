@@ -28,8 +28,7 @@ class MovieDetailActivity : AppCompatActivity(), FavouritePresenter.FavouriteVie
 
     private var isAdded: Boolean = false
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
+        override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.fragment_movie_detail)
         setMovieDetail()

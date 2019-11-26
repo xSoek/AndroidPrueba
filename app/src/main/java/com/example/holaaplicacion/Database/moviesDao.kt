@@ -1,10 +1,7 @@
 package com.example.holaaplicacion.Database
 
-import android.content.Context
-import androidx.lifecycle.LiveData
 import androidx.room.*
-import com.example.holaaplicacion.model.DatabaseMovie
-import com.example.holaaplicacion.model.Movie
+
 
 
 //El Dao posee todas las queries de la app
